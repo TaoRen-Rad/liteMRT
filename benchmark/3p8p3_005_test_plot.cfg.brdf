@@ -1,0 +1,185 @@
+Version 3.8
+-----------
+
+4 kernels allowed now, some new kernel types....
+
+
+C  BRDF : Basic Inputs for BRDF Type Strucure "BRDF_Sup_Inputs"
+C  ============================================================
+
+BRDFSUP - Use solar sources?
+t
+
+BRDFSUP - Use user-defined viewing zenith angles?
+t
+
+BRDFSUP - Do BRDF surface?
+t
+
+BRDFSUP - Do NewCM Ocean BRDF reflectance?
+f
+
+BRDFSUP - Do surface emission?
+f
+
+BRDFSUP - Do Observation Geometry?
+f
+
+BRDFSUP - Do Doublet Geometry?
+f
+
+BRDFSUP - Number of half-space streams
+32
+
+    @@@@ SOLAR ZENITH INPUT (LATTICE or DOUBLET)
+
+BRDFSUP - Number of solar zenith angles
+3
+
+BRDFSUP - Solar zenith angles (degrees)
+20.01
+40.01
+60.01
+
+    @@@@ LATTICE GEOMETRY USER ANGLE INPUTS
+
+BRDFSUP - Number of user-defined relative azimuth angles
+46
+
+BRDFSUP - User-defined relative azimuth angles (degrees)
+0.0
+4.0
+8.0
+12.0
+16.0
+20.0
+24.0
+28.0
+32.0
+36.0
+40.0
+44.0
+48.0
+52.0
+56.0
+60.0
+64.0
+68.0
+72.0
+76.0
+80.0
+84.0
+88.0
+92.0
+96.0
+100.0
+104.0
+108.0
+112.0
+116.0
+120.0
+124.0
+128.0
+132.0
+136.0
+140.0
+144.0
+148.0
+152.0
+156.0
+160.0
+164.0
+168.0
+172.0
+176.0
+180.0
+
+BRDFSUP - Number of user-defined viewing zenith angles
+31
+
+BRDFSUP - User-defined viewing zenith angles (degrees)
+0.0
+2.0
+4.0
+6.0
+8.0
+10.0
+12.0
+14.0
+16.0
+18.0
+20.0
+22.0
+24.0
+26.0
+28.0
+30.0
+32.0
+34.0
+36.0
+38.0
+40.0
+42.0
+44.0
+46.0
+48.0
+50.0
+52.0
+54.0
+56.0
+58.0
+60.0
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BRDFSUP - Number of BRDF kernels
+1
+
+BRDFSUP - Do white-sky and black-sky albedo output?
+F
+
+BRDFSUP - Do white-sky albedo scaling?
+F
+
+BRDFSUP - Do black-sky albedo scaling?
+F
+
+#BRDFSUP - Do Lambertian calculations only?
+#f
+
+BRDFSUP - Number of BRDF azimuth angles
+50
+
+BRDFSUP - Do shadow effect for glitter kernels?
+t
+
+BRDFSUP - Do direct-bounce only (no multiple-scatter contributions to BRDF)?
+f
+
+BRDFSUP - Do multiple reflectance for all glitter kernels?
+f
+
+BRDFSUP - Do multiple reflectance for just the direct-bounce glitter kernels?
+f
+
+BRDFSUP - Multiple reflectance scattering order for glitter kernels
+0
+
+BRDFSUP - Multiple reflectance scattering; Polar quadrature order
+40
+
+BRDFSUP - Multiple reflectance scattering; Azimuth quadrature order
+100
+
+
+
+C  BRDF : BRDF Kernel Inputs for BRDF Type Strucure "BRDF_Sup_Inputs"
+C  ==================================================================
+
+BRDFSUP - Kernel names, indices, amplitudes, # parameters, parameters
+Rahman     8  0.4000 3    0.050000   -0.100000    0.750000    0.000000
+
+(Above statement is Formatted: ( A10, I2, F6.2, I2, 3F12.6 ))    ! V3.6 & Earlier
+(Above statement is Formatted: ( A10, I2, F8.4, I2, 3F12.6 ))    ! V3.7
+(Above statement is Formatted: ( A10, I2, F8.4, I2, 4F12.6 ))    ! V3.8
+
