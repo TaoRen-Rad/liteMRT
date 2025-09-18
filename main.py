@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 from matplotlib.colors import Normalize
 from matplotlib.cm import ScalarMappable
 from matplotlib.gridspec import GridSpec
-from mytools.plot_config import set_plot_config, enable_jupyter_inline_backend
+from testutils.plot_config import set_plot_config, enable_jupyter_inline_backend
 from liteMRT.lite_mrt import (
     gauss_seidel_iterations_m,
     single_scattering_up,
