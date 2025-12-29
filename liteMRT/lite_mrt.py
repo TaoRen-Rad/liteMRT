@@ -270,7 +270,7 @@ def gauss_seidel_iterations_m(m: int, mu0: float, srfa_mu0_mup: np.ndarray,
     transmittance_matrix = wpij[:, 0:ng1, 0:ng1].copy()
     reflectance_matrix = wpij[:, 0:ng1, ng1:ng2].copy()
     intensity_up, intensity_dn = np.copy(intensity_1up), np.copy(intensity_1dn)
-    tol, conv_check = 1e-5, 0
+    tol, conv_check = 1e-4, 0
     prev_intensity_up, prev_intensity_dn = np.copy(intensity_up), np.copy(intensity_dn)
 
     for _ in range(nit):

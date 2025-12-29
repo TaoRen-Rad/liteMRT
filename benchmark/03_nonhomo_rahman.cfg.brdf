@@ -29,7 +29,7 @@ BRDFSUP - Do Doublet Geometry?
 f
 
 BRDFSUP - Number of half-space streams
-8
+16
 
     @@@@ SOLAR ZENITH INPUT (LATTICE or DOUBLET)
 

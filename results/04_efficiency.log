@@ -1,0 +1,78 @@
+Maximum relative error: 0.0322%
+True
+
+============================================================
+TIMING ANALYSIS
+============================================================
+
+gauss_seidel_iterations_m:
+  Number of calls: 48
+  Total time:      0.083678 s
+  Average time:    0.001743 s
+  Min time:        0.001460 s
+  Max time:        0.008573 s
+
+single_scattering_up:
+  Number of calls: 93
+  Total time:      0.007942 s
+  Average time:    0.000085 s
+  Min time:        0.000042 s
+  Max time:        0.003141 s
+
+single_scattering_down:
+  Number of calls: 93
+  Total time:      0.007282 s
+  Average time:    0.000078 s
+  Min time:        0.000039 s
+  Max time:        0.003243 s
+
+source_function_integrate_up:
+  Number of calls: 1488
+  Total time:      0.155753 s
+  Average time:    0.000105 s
+  Min time:        0.000087 s
+  Max time:        0.003755 s
+
+source_function_integrate_down:
+  Number of calls: 1488
+  Total time:      0.156590 s
+  Average time:    0.000105 s
+  Min time:        0.000087 s
+  Max time:        0.003782 s
+
+expand_brdf_mup_mup:
+  Number of calls: 16
+  Total time:      0.168358 s
+  Average time:    0.010522 s
+  Min time:        0.009861 s
+  Max time:        0.012250 s
+
+expand_brdf_mu0_mup:
+  Number of calls: 48
+  Total time:      0.042117 s
+  Average time:    0.000877 s
+  Min time:        0.000812 s
+  Max time:        0.003168 s
+
+expand_brdf_mu0_mu:
+  Number of calls: 1488
+  Total time:      0.109695 s
+  Average time:    0.000074 s
+  Min time:        0.000068 s
+  Max time:        0.001662 s
+
+expand_brdf_mup_mu:
+  Number of calls: 1488
+  Total time:      1.271889 s
+  Average time:    0.000855 s
+  Min time:        0.000809 s
+  Max time:        0.002744 s
+
+rho:
+  Number of calls: 4278
+  Total time:      0.009874 s
+  Average time:    0.000002 s
+  Min time:        0.000001 s
+  Max time:        0.001309 s
+
+Total measured time: 2.013178 s

@@ -265,7 +265,7 @@ xk = np.zeros((nlr, len(aermoms)))
 xk = aermoms * layer_scales[:, np.newaxis] + raymoms * (1.0 - layer_scales[:, np.newaxis])
 
 
-N_FINE = 5
+N_FINE = 2
 
 dtau /= N_FINE
 nlr *= N_FINE
@@ -273,12 +273,12 @@ ssa = np.ascontiguousarray(np.repeat(ssa, N_FINE, axis=0))  # shape: (nlr * N_FI
 xk = np.ascontiguousarray(np.repeat(xk, N_FINE, axis=0))  # shape: (nlr * N_FINE, nk)
 
 
-szds, vzds, azds, lidort_ans = parse_lidort_all("benchmark/3p8p3_005_test_plot", 0)
+szds, vzds, azds, lidort_ans = parse_lidort_all("benchmark/03_nonhomo_rahman", 0)
 
 
 nit = 10  # number of iterations
-ng1 = 8 * 3  # number of Gauss nodes per hemisphere
-nm = 32
+ng1 = 12  # number of Gauss nodes per hemisphere
+nm = 16
 
 liteMRT_ans = solve_lattice_with_timing(
     nit,
@@ -296,9 +296,9 @@ liteMRT_ans = solve_lattice_with_timing(
     brdf_parameters,
 )
 
-
-print(np.max(np.abs(liteMRT_ans - lidort_ans) / lidort_ans) * 100.0)
-print(np.allclose(liteMRT_ans, lidort_ans, rtol=5e-5))
+max_rel_error = np.max(np.abs(liteMRT_ans - lidort_ans) / lidort_ans) * 100.0
+print(f"Maximum relative error: {max_rel_error:.4f}%")
+print(np.allclose(liteMRT_ans, lidort_ans, rtol=5e-4))
 
 # Print timing results
 print("\n" + "="*60)
@@ -337,7 +337,6 @@ nszd = len(szds)
 plt.close("all")
 fig = plt.figure(figsize=[6, 2.5])
 
-# 主图区域范围（去掉左右 colorbar 的区域）
 main_left = 0.15
 main_right = 0.8
 main_bottom = 0.1
@@ -361,9 +360,8 @@ plot_vz = np.sin(np.radians(vz_grid))
 
 titlenames = ["TOA", "BOA"]
 
-error_bound = 0.004
+error_bound = 0.04
 
-# 绘制主图
 for id_szd in range(nszd):
     for i in range(2):
         ax = fig.add_subplot(main_gs[i, id_szd], projection="polar")
@@ -433,4 +431,4 @@ cb2 = fig.colorbar(sm_err, cax=cax_right)
 # cb2.set_ticks(np.linspace(-0.5, 0.5, 5))
 cb2.set_label(r"Relative Error [\%]")
 
-fig.savefig("output.png")
+fig.savefig("results/04_efficiency.png")

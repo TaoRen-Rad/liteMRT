@@ -214,6 +214,8 @@ def rho(
         brdf = rahman(theta_i, theta_r, phi, brdf_parameters)
     elif brdf_type == "coxmunk":
         brdf = coxmunk(theta_i, theta_r, phi, brdf_parameters)
+    elif brdf_type == "lambertian":
+        brdf = 1.0
     return brdf
 
 
